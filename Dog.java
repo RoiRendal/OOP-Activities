@@ -31,7 +31,7 @@ public class Dog
         return male;
     }
     
-    public void setPuppyNumber(int newPuppyNumber)
+    public void setNumberofPuppies(int newPuppyNumber)
 	{
         if (newPuppyNumber >= 0 && newPuppyNumber <= 10)
 		{
@@ -43,16 +43,16 @@ public class Dog
         }
     }
     
-    public int showPuppyNumber()
+    public int showNumberofPuppies()
 	{
         return puppyNumber;
     }
     
-    public void newPuppy(Dog newPuppy)
+    public void setPuppies(Dog setPuppies)
 	{
         if (puppyNumber < 10)
 		{
-            dogPuppies[puppyNumber] = newPuppy;
+            dogPuppies[puppyNumber] = setPuppies;
             puppyNumber++;
         }
 		else
@@ -61,16 +61,24 @@ public class Dog
         }
     }
     
-    public void listPuppies()
+    public void showPuppies()
 	{
         for (int i = 0; i < puppyNumber; i++)
 		{
             String puppyName = dogPuppies[i].showName();
-            System.out.println("Puppy name is: " + puppyName);
+            System.out.println("Puppy name is: " + puppyName + " (");
+            if (dogPuppies[i].isMale())
+            {
+                System.out.println("Male)");
+            }
+            else
+            {
+                System.out.println("Female)");
+            }
         }
     }
     
-    public void makeBark()
+    public void bark()
 	{
         System.out.println("Woof! Woof!");
     }

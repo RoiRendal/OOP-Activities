@@ -8,26 +8,29 @@ public class Main
         
         Dog firstPuppy = new Dog();
         firstPuppy.setName("Gillian");
+        firstPuppy.setMale(false);
         
         Dog secondPuppy = new Dog();
         secondPuppy.setName("Lazare");
+        secondPuppy.setMale(true);
         
         Dog thirdPuppy = new Dog();
         thirdPuppy.setName("Raimund");
+        thirdPuppy.setMale(true);
 
         Dog fourthPuppy = new Dog();
         fourthPuppy.setName("Wilfried");
+        fourthPuppy.setMale(true);
         
-        myDog.newPuppy(firstPuppy);
-        myDog.newPuppy(secondPuppy);
-        myDog.newPuppy(thirdPuppy);
-        myDog.newPuppy(fourthPuppy);
+        myDog.setPuppies(firstPuppy);
+        myDog.setPuppies(secondPuppy);
+        myDog.setPuppies(thirdPuppy);
+        myDog.setPuppies(fourthPuppy);
         
         String dogName = myDog.showName();
         System.out.println("My dog is called: " + dogName);
         
-        boolean isItMale = myDog.isMale();
-        if (isItMale)
+        if (myDog.isMale())
 		{
             System.out.println("My dog is a boy");
         }
@@ -36,13 +39,13 @@ public class Main
             System.out.println("My dog is a girl");
         }
         
-        int puppyCount = myDog.showPuppyNumber();
+        int puppyCount = myDog.showNumberofPuppies();
         System.out.println("My dog has this many puppies: " + puppyCount);
         
         System.out.println("Here are the names of the puppies:");
-        myDog.listPuppies();
+        myDog.showPuppies();
         
         System.out.println("Now my dog will bark:");
-        myDog.makeBark();
+        myDog.bark();
     }
 }
